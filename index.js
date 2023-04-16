@@ -8,10 +8,7 @@ const client = new Discord.Client({
     ]
 })
 
-const config = require('./config.json')
-
-const prefix = config.prefix;
-const token = config.token;
+const {token, prefix} = require('./config.json')
 
 const com = fs.readdir('./commands/', (err,files) => {
     if (err) console.log(err)
@@ -26,7 +23,7 @@ const com = fs.readdir('./commands/', (err,files) => {
 })
 
 client.on('ready', () => {
-    console.log("BOT READY")
+    console.log("LOG: START")
 })
 
 /// =========== Commands ===============
@@ -36,8 +33,12 @@ client.on('messageCreate', msg => {
     const args = msg.content.slice(id.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
     if (cmd == 'ping'){
-        com.help(client, msg)
-    }
+        com.help(client, msg)}
+        
+    if (cmd == 'help'{
+        message.reply('None')}
+    
+    else: message.reply('Такой команды не существует!')
 })
 
 
