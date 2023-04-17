@@ -12,6 +12,7 @@ const client = new Discord.Client({
 
 const {token, prefix} = require('./config.json')
 
+
 client.commands = new Discord.Collection()
 
 const db = require('./db')
@@ -39,8 +40,8 @@ fs.readdir('./commands', (err, files) => { // чтение файлов в па�
 // ================= Main Code ===================================
 
 client.on('ready', () => {
-    console.log("BOT START")
-}) 
+    console.log("BOT READY")
+})
 
 /// =========== Commands ===============
 
@@ -49,15 +50,7 @@ client.on('messageCreate', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
     if (cmd == 'ping'){
-        client.commands.get('ping')(client, message, args)
-    }
-
-    if (cmd == 'clear'){
-        client.commands.get('clear')(client, message,args)
-    }
-
-    if (cmd == 'migrations_full_database'){
-        client.commands.get('migrations_full_database')(client, message, db)
+        com.help(client, msg)
     }
 })
 
@@ -67,4 +60,4 @@ client.on('guildMemberUpdate', (oldMember,newMember) => {
     
 })
 
-client.login(token)
+client.login('OTYwMjY3OTE3MDg4NDExNjc5.GZL4N2.IXu3XSQYQPevClXarT7jJMZ9zDlbavj3-H5FFU')
