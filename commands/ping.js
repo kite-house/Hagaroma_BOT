@@ -1,15 +1,12 @@
 const Discord = module.require('discord.js');
-const fs = requre('fs')
 
-module.exports = async (cleint,message) => {
+module.exports = async (cleint,message, args) => {
     message.reply("Pong")
 }
 
+// ================== HELP ============================
 
-
-module.exports.names = ['ping']
 module.exports.help = {
     name : 'ping',
     description : 'Проверочка',
-    defaultPermission: True
 }
