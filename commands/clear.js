@@ -1,17 +1,29 @@
-const Discord = module.require('discord.js');
+const { EmbedBuilder } = require("@discordjs/builders");
+const Discord = require('discord.js')
+const { SlashCommandBuilder} = require('discord.js');
 
-module.exports = (client, message, args) => {
-    if (!args[0]) return message.reply("Укажите значение!");
-    if (args[0] > 100) return message.reply("Укажите значение меньше 100!");
-    message.channel.bulkDelete(args[0]).then(() => {
-        message.channel.send(`Deleted: ${args[0]} messages.`)
-        .then((msg) => msg.delete({ timeout : 10000 }));;
+module.exports = (client, interaction, value) => {
+    interaction.channel.bulkDelete(value).then(() => {
+        interaction.reply(
+            {embeds : [new EmbedBuilder()
+                .setColor(Discord.Colors.Green)
+                .setDescription(`Удалено ${value} сообщений!`)
+            ], ephemeral: true })
     });
 }
-
 // ================== HELP ============================
 
 module.exports.help = {
     name : 'clear',
-    description: 'очищает'
+    data: new SlashCommandBuilder()
+    .setName("clear")
+    .setDescription("Удалить до 100 собщений в любом канале!")
+    .addIntegerOption(option => 
+        option
+        .setName('value')
+        .setDescription('valuemessage')
+        .setMinValue(1)
+        .setMaxValue(100)
+        .setRequired(true)
+    )
 }
