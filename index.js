@@ -37,7 +37,7 @@ fs.readdir('./commands', (err, files) => { // чтение файлов в па�
     })
     const rest = new Discord.REST().setToken(token);
     const data = rest.put(
-        Discord.Routes.applicationGuildCommands('960267917088411679', '1100792665781571624'),
+        Discord.Routes.applicationGuildCommands('960267917088411679', '749647850434068540'),
         { body: commands },
     
     console.log(`Развёрнуто ${commands.length} команд`)
