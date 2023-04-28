@@ -1,7 +1,20 @@
 const { SlashCommandBuilder} = require('discord.js');
 
-module.exports = async (client, message, db) => {
-    if (message.author.username != 'kite') return message.reply("Недостаточно прав для использование команды!")
+module.exports = async (client, interaction, db) => {
+    if(interaction.user.id != '343339732975091714') return interaction.reply({
+        embeds : [new EmbedBuilder()
+            .setAuthor({iconURL: client.user.avatarURL(client.user.avatar) , name: `${client.user.username}#${client.user.discriminator}`})
+            .setThumbnail(client.user.avatarURL(client.user.avatar))
+            .setColor(Discord.Colors.Red)
+            .setTitle('Возникла ошибка!')
+            .setDescription('Недостаточно прав для использование!')
+            .setFooter({
+                iconURL : client.user.avatarURL(client.user.avatar),
+                text: client.user.username
+            })
+            .setTimestamp()
+        ], ephemeral: true });
+
     db.query('DELETE FROM users WHERE 1')
     db.query('ALTER TABLE users AUTO_INCREMENT = 1')
     

@@ -70,7 +70,7 @@ module.exports = async (client, db, newMember) => {
                 let data = require('./config_channel_structure.json')
                 data.structure_hagaroma.id_message_structure_hagaroma = id_message_structure
 
-                data = JSON.stringify(data)
+                data = JSON.stringify(data, null, 4)
                 fs.writeFileSync('./channel_structure/config_channel_structure.json', data); 
 
             })

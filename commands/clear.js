@@ -21,7 +21,7 @@ module.exports.help = {
     .addIntegerOption(option => 
         option
         .setName('value')
-        .setDescription('valuemessage')
+        .setDescription('Количество удаляймых сообщение от 1 до 100!')
         .setMinValue(1)
         .setMaxValue(100)
         .setRequired(true)

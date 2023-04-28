@@ -1,0 +1,75 @@
+{
+    "Categoration": {
+        "Empty_tag_list": {
+            "input_empty_tag_list": [
+                "",
+                "тут"
+            ],
+            "output_empty_tag_list": [
+                "да?",
+                "да да я",
+                "на связи",
+                "слушаю"
+            ]
+        },
+        "Greeting_list": {
+            "input_greeting_list": [
+                "ку",
+                "привет",
+                "салам",
+                "здарова",
+                "здарова заебал",
+                "прив",
+                "qq"
+            ],
+            "output_greeting_list": [
+                "ку",
+                "привет",
+                "салам",
+                "здарова",
+                "здарова заебал",
+                "прив",
+                "qq"
+            ]
+        },
+        "How_list": {
+            "input_how_list": [
+                "как дела",
+                "как настроение",
+                "как мать",
+                "ты в порядке"
+            ],
+            "output_how_list": [
+                "всё гуд",
+                "всё заебись",
+                "всё классно"
+            ]
+        },
+        "Insults_list": {
+            "input_insults_list": [
+                "ты лох"
+            ],
+            "output_insults_list": [
+                "пошёл нахуй"
+            ]
+        },
+        "Farewell_list": {
+            "input_farewell_list": [
+                "пока"
+            ],
+            "output_farewell_list": [
+                "досвидос"
+            ]
+        },
+        "Info_developer_list": {
+            "input_info_developer_list": [
+                "кто твой повелитель",
+                "ты чей",
+                "кто тебя создал"
+            ],
+            "output_info_developer_list": [
+                "Меня создал и мною управляет - <@343339732975091714>"
+            ]
+        }
+    }
+}
