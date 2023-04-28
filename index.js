@@ -26,6 +26,12 @@ loader(client, process.env.SECRET_TOKEN_DISCORD)
 
 client.on('ready', () => {
     console.log("SYSTEM-INFO: START | STATUS: ACCEPT!")
+    client.user.setPresence({
+        game: {
+            name: `Следит за каптами`,
+            type: "WATCHING",
+        }
+    });
 })
 
 /// =========== Commands ===============
