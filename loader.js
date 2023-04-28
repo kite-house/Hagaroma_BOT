@@ -11,9 +11,8 @@ module.exports = (client, token) => {
         if (err) console.log(err)
     
         let jsfile = files.filter(f => f.split('.').pop() === 'js') // файлы не имеющие расширение .js игнорируются
-        if (jsfile.length <= 0) return console.log('Команды не найдены!') // если нет ни одного файла с расширением .js
+        if (jsfile.length <= 0) return console.log('ERROR-INFO: COMMANDS NOT FOUND!') // если нет ни одного файла с расширением .js
     
-        console.log(`Загружено ${jsfile.length} команд`)
         jsfile.forEach((f, i) => { // добавляем каждый файл в коллекцию команд
             let props = require(`./commands/${f}`)
             client.commands.set(props.help.name, props)
@@ -25,10 +24,10 @@ module.exports = (client, token) => {
         // TEST-SERVER = '1100792665781571624'
 
         const data = rest.put(
-            Discord.Routes.applicationGuildCommands('960267917088411679', '1100792665781571624'),
+            Discord.Routes.applicationGuildCommands('960267917088411679', '749647850434068540'),
             { body: commands },
         
-        console.log(`Развёрнуто ${commands.length} команд`)
+        console.log(`SYSTEM-INFO: LOADING ${jsfile.length} COMMANDS`)
         
         );
     })
@@ -39,9 +38,9 @@ module.exports = (client, token) => {
         if (err) console.log(err)
     
         let jsfile = files.filter(f => f.split('.').pop() === 'js') // файлы не имеющие расширение .js игнорируются
-        if (jsfile.length <= 0) return console.log('События не найдены!') // если нет ни одного файла с расширением .js
+        if (jsfile.length <= 0) return console.log('ERROR-INFO: EVENTS NOT FOUND!') // если нет ни одного файла с расширением .js
     
-        console.log(`Загружено ${jsfile.length} событий`)
+        console.log(`SYSTEM-INFO: LOADING ${jsfile.length} EVENTS`)
         jsfile.forEach((f, i) => { // добавляем каждый файл в коллекцию команд
             let props = require(`./events/${f}`)
             client.events.set(props.help.name, props)
@@ -56,9 +55,9 @@ module.exports = (client, token) => {
         if (err) console.log(err)
     
         let jsfile = files.filter(f => f.split('.').pop() === 'js') // файлы не имеющие расширение .js игнорируются
-        if (jsfile.length <= 0) return console.log('Каналов не найдены!') // если нет ни одного файла с расширением .js
+        if (jsfile.length <= 0) return console.log('ERROR-INFO: CHANNEL NOT FOUND!') // если нет ни одного файла с расширением .js
     
-        console.log(`Загружено ${jsfile.length} канала`)
+        console.log(`SYSTEM-INFO: LOADING ${jsfile.length} CHANNEL`)
         jsfile.forEach((f, i) => { // добавляем каждый файл в коллекцию команд
             let props = require(`./channel_structure/${f}`)
             client.channel_structure.set(props.help.name, props)
@@ -72,9 +71,9 @@ module.exports = (client, token) => {
         if (err) console.log(err)
     
         let jsfile = files.filter(f => f.split('.').pop() === 'js') // файлы не имеющие расширение .js игнорируются
-        if (jsfile.length <= 0) return console.log('События сообщений не найдено!') // если нет ни одного файла с расширением .js
+        if (jsfile.length <= 0) return console.log('ERROR-INFO: COMMUNICATION NOT FOUND!') // если нет ни одного файла с расширением .js
     
-        console.log(`Загружено ${jsfile.length} событий сообщений`)
+        console.log(`SYSTEM-INFO: LOADING ${jsfile.length} COMMUNICATION`)
         jsfile.forEach((f, i) => { // добавляем каждый файл в коллекцию команд
             let props = require(`./communication/${f}`)
             client.communication.set(props.help.name, props)

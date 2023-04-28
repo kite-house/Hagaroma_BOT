@@ -240,7 +240,7 @@ module.exports = (client, interaction, action, categoration, method, value, patt
 
 
     data = JSON.stringify(pattern, null, 4)
-    fs.writeFileSync('./communication/communication_pattern.json', data); 
+    fs.writeFileSync('./communication/pattern.json', data); 
 
 
     // ============== Reply Message ==============

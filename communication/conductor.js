@@ -1,4 +1,4 @@
-pattern = require('./communication_pattern.json')
+pattern = require('./pattern.json')
 const fs = require('fs')
 
 module.exports = async (client, message) => {
