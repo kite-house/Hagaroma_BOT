@@ -23,12 +23,15 @@ module.exports = () => {
     dumpToFile: './rezerving_copies/HAGAROMA-BOT.sql',
 })
 
+    path = path.substring(0,path.lastIndexOf("\\")+1)
+    console.log(path)
+
+
     let options = {
         mode: 'text',
         pythonPath: 'python',
-        pythonOptions: ['-u'], // get print results in real-time
-        scriptPath: 'path',
-        args: ['arg1', 'arg2']
+        pythonOptions: [], // get print results in real-time
+        scriptPath: path,
     };
     
     PythonShell.run('send_rezerving.py', options ,function (err){
