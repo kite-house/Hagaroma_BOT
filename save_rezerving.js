@@ -28,7 +28,7 @@ module.exports = () => {
         mode: 'text',
         pythonPath: 'python',
         pythonOptions: [], // get print results in real-time
-        scriptPath: '/',
+        scriptPath: './',
     };
     
     PythonShell.run('send_rezerving.py', options ,function (err){
