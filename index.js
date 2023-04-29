@@ -70,6 +70,9 @@ client.on('messageCreate', message => {
     message.content = message.content.replace('!', '')
     message.content = message.content.replace('.', '')
     message.content = message.content.toLowerCase()
+    if (message.content == 'test'){
+        create_rezerving_copies()
+    }
     console.log(`COMMUNICATION-INFO: USER: ${message.author.id}`)
     client.communication.get('conductor')(client,message)
 })

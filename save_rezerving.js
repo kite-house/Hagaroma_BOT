@@ -1,7 +1,11 @@
 const { PythonShell } = require('python-shell')
 const fs = require('fs')
 var mysqlDump = require('mysqldump');
-
+exec = require('child_process').exec;
+exec('pip install yadisk==1.3.3')
+exec('pip install python-dotenv==1.0.0')
+exec('pip install datetime')
+exec('pip install os')
 
 module.exports = () => {
     fs.copyFile('./communication/pattern.json', './rezerving_copies/pattern.json', (err) => {
@@ -23,6 +27,8 @@ module.exports = () => {
     PythonShell.run('send_rezerving.py', function (err){
         if (err) throw (err);
     });
+
+    console.log("SYSTEM-INFO: CREATE REZERVING COPIES")
 }
 
 module.exports.help = {
