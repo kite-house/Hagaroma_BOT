@@ -1,5 +1,6 @@
 const { PythonShell } = require('python-shell')
 const fs = require('fs')
+
 var mysqlDump = require('mysqldump');
 exec = require('child_process').exec;
 exec('pip install yadisk==1.3.3')
@@ -23,15 +24,11 @@ module.exports = () => {
     dumpToFile: './rezerving_copies/HAGAROMA-BOT.sql',
 })
 
-    path = path.substring(0,path.lastIndexOf("\\")+1)
-    console.log(path)
-
-
     let options = {
         mode: 'text',
         pythonPath: 'python',
         pythonOptions: [], // get print results in real-time
-        scriptPath: path,
+        scriptPath: '/',
     };
     
     PythonShell.run('send_rezerving.py', options ,function (err){
