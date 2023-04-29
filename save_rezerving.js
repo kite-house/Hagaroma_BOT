@@ -28,10 +28,11 @@ module.exports = () => {
         mode: 'text',
         pythonPath: 'python',
         pythonOptions: [], // get print results in real-time
-        scriptPath: './',
+        scriptPath: '',
+        args: []
     };
     
-    PythonShell.run('send_rezerving.py', options ,function (err){
+    PythonShell.run('send_rezerving.py', options, function (err){
         if (err) throw (err);
     });
 
